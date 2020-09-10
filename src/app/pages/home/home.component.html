@@ -1,0 +1,19 @@
+<div *ngIf="!loading">
+  <div class="row">
+    <input [(ngModel)]="from" (input)="updateTo()" type="text" />
+    <select [(ngModel)]="currFrom" (change)="updateFrom()">
+      <option *ngFor="let rate of rates" [value]="rate.curr">
+        {{ rate.curr }}
+      </option>
+    </select>
+  </div>
+
+  <div class="row">
+    <input [(ngModel)]="to" (input)="updateFrom()" type="text" />
+    <select [(ngModel)]="currTo" (change)="updateTo()">
+      <option *ngFor="let rate of rates" [value]="rate.curr">
+        {{ rate.curr }}
+      </option>
+    </select>
+  </div>
+</div>
